@@ -38,10 +38,20 @@ function loadFriends() {
   //     } catch (error) {
   //       showDataError(error);
   //     }
-  
 
-}
-
+  const xhr = new XMLHttpRequest()
+  xhr.open("GET", "hsFriends.json")
+  xhr.onload = function () {
+      if (xhr.status === 200) {
+        const friends = JSON.parse(xhr.responseText)
+        renderFriends(friends)
+      }
+      else {
+        showDataError(error)
+      }
+    }
+    xhr.send()
+  }
 
 // -------------------------------------------------------------
 // renderFriends: turn the array into cards on the page.
