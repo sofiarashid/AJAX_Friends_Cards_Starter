@@ -1,0 +1,20 @@
+[
+    {
+        "name": "Pam",
+        "relationship": "friend",
+        "detail": "Likes singing",
+        "hobbies": ["Theatre", "Drawing","Shopping"]
+    },
+    {
+        "name": "Bill",
+        "relationship": "kid I babysit",
+        "detail": "Likes dinosaurs",
+        "hobbies": ["Sitting", "Learning", "Making friends"]
+    },
+    {
+        "name": "Larch",
+        "relationship": "My kid",
+        "detail": "Likes unicorns",
+        "hobbies": ["Going to chili's", "Getting froyo", "Staying at home"]
+    }
+]

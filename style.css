@@ -1,0 +1,16 @@
+body { background: #f3f6fb; color: #1e293b; font-family: Arial, sans-serif; }
+.container { max-width: 1080px; }
+h1 { font-weight: 700; }
+.eyebrow { color: #24569a; font-size: .85rem; font-weight: 700; letter-spacing: .1em; }
+.intro { max-width: 650px; }
+.btn-primary {
+  --bs-btn-bg: #24569a; --bs-btn-border-color: #24569a;
+  --bs-btn-hover-bg: #1d4680; --bs-btn-hover-border-color: #1d4680;
+  --bs-btn-active-bg: #173a6b; --bs-btn-active-border-color: #173a6b;
+}
+.card { border: 1px solid #d9e2ee; border-radius: 12px; }
+.card-title { font-weight: 700; }
+.relationship { color: #24569a; font-weight: 700; }
+.hobbies { background: #eaf0f7; padding: .75rem; border-radius: 6px; }
+#status { margin: 1.5rem 0; }
+.error { color: #a51d23; font-weight: 700; }
