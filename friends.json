@@ -1,3 +1,5 @@
+// these are my friends
+
 [
     {
         "name": "Pam",
@@ -7,13 +9,13 @@
     },
     {
         "name": "Bill",
-        "relationship": "kid I babysit",
+        "relationship": "Baby that I babysit",
         "detail": "Likes dinosaurs",
         "hobbies": ["Sitting", "Learning", "Making friends"]
     },
     {
         "name": "Larch",
-        "relationship": "My kid",
+        "relationship": "My baby",
         "detail": "Likes unicorns",
         "hobbies": ["Going to chili's", "Getting froyo", "Staying at home"]
     }

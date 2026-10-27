@@ -38,6 +38,7 @@ function loadFriends() {
   //     } catch (error) {
   //       showDataError(error);
   //     }
+  
 
 }
 
