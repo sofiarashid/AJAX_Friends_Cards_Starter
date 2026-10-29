@@ -10,6 +10,7 @@ const cardsContainer = document.getElementById("cards");
 const statusMessage = document.getElementById("status");
 
 // CHECKPOINT 2: When the Load Friends button is clicked, run loadFriends.
+loadButton.addEventListener("click", loadFriends);
 
 
 // -------------------------------------------------------------
@@ -39,19 +40,23 @@ function loadFriends() {
   //       showDataError(error);
   //     }
 
-  const xhr = new XMLHttpRequest()
-  xhr.open("GET", "hsFriends.json")
+  const xhr = new XMLHttpRequest();
+  xhr.open("GET", "friends.json");
   xhr.onload = function () {
-      if (xhr.status === 200) {
+    if (xhr.status === 200) {
+      try {
         const friends = JSON.parse(xhr.responseText)
-        renderFriends(friends)
+        renderFriends(friends);
+      } catch (error) {
+        showDataError(error);
       }
-      else {
-        showDataError(error)
-      }
+    } else {
+      showLoadError();
     }
-    xhr.send()
-  }
+  };
+  xhr.onerror = showLoadError;
+  xhr.send();
+}
 
 // -------------------------------------------------------------
 // renderFriends: turn the array into cards on the page.
@@ -75,6 +80,21 @@ function renderFriends(friends) {
   </div>
   */
 
+  let cardsHTML = "";
+  for (const friend of friends) {
+    cardsHTML += `
+  <div class="col-12 col-md-6 col-lg-4">
+    <article class="card h-100">
+      <div class="card-body">
+        <h2 class="card-title h4">${friend.name}</h2>
+        <p class="relationship">${friend.relationship}</p>
+        <p>${friend.detail}</p>
+        <p class="hobbies"><strong>Hobbies:</strong> ${friend.hobbies.join(", ")}</p>
+      </div>
+    </article>
+  </div>`;
+  }
+  cardsContainer.innerHTML = cardsHTML;
 
   // Supplied success message. Keep this after the cards are updated.
   statusMessage.classList.remove("error");
@@ -91,7 +111,7 @@ function showLoadError() {
   cardsContainer.innerHTML = "";
   statusMessage.classList.add("error");
   statusMessage.textContent =
-    "Could not load friends. Check the JSON file name and path, then try again.";
+    "Could not load friends.";
 }
 
 // Call this from your catch block. The file arrived, but its data
@@ -100,6 +120,6 @@ function showDataError(error) {
   cardsContainer.innerHTML = "";
   statusMessage.classList.add("error");
   statusMessage.textContent =
-    "friends.json loaded, but its data could not be used. Check quotes, commas, brackets, and key names.";
+    "Data could not be used.";
   console.error("Data problem:", error.message);
 }

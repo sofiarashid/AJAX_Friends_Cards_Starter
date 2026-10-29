@@ -1,5 +1,3 @@
-// these are my friends
-
 [
     {
         "name": "Pam",
@@ -18,5 +16,23 @@
         "relationship": "My baby",
         "detail": "Likes unicorns",
         "hobbies": ["Going to chili's", "Getting froyo", "Staying at home"]
+    },
+    {
+        "name": "Nikki",
+        "relationship": "friend",
+        "detail": "Likes to dance",
+        "hobbies": ["Dancing", "Singing", "Shopping"]
+    },
+    {
+        "name": "Eirene",
+        "relationship": "friend",
+        "detail": "Plays soccer",
+        "hobbies": ["Soccer", "Hanging out with friends", "Singing"]
+    },
+    {
+        "name": "Chloe",
+        "relationship": "friend",
+        "detail": "Likes to sing",
+        "hobbies": ["Singing", "Dancing", "Acting"]
     }
 ]
